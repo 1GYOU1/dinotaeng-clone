@@ -1,0 +1,9 @@
+.main_area{margin-top:30px;padding-bottom:5vw;background:#EFEDE6;}
+.main_area .main_1{background:url(/images/main_bg.png)center top / 100%;}
+.main_area .main_2 h3{font-size:60px; text-align:center;margin:110px 0;font-family:'AmericusSansAged';color:#B13F35;}
+.main_area .main_2 .movie_box{width:35%;margin:30px auto;}
+.main_area .main_2 .small_txt{font-size:18px;text-align:center;color:#B13F35;}
+.main_area .main_3{padding:200px 0;}
+.main_area .main_3 h3{font-size:65px;text-align:center;font-family:'AmericusSansAged';color:#B13F35;}
+.main_area .main_3 .img_box{width:55%;max-width:900px;margin:100px auto 0;}
+.main_area .main_3 .img_box img{width:100%;}
