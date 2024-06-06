@@ -2,7 +2,11 @@
 
 import { useParams } from "next/navigation"
 
-function BoardDetail(param) {
+interface Prop {
+  type: String
+}
+
+function BoardDetail(param:Prop) {
   const params = useParams()
   return (
     <div className="w-full">

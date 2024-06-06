@@ -15,7 +15,7 @@ function Page() {
         <div className="main_2">
           <h3>Life in Marshville</h3>
           <div className="movie_box">
-            <video src="https://player.vimeo.com/progressive_redirect/playback/913155636/rendition/1080p/file.mp4?loc=external&amp;signature=4fde946188b7e20322b8159688bffb0ed6f3087b429b0132d988b1ff22b8ba4f" autoplay="true" loop="true" muted="true" playsinline="true"></video>
+            <video src="https://player.vimeo.com/progressive_redirect/playback/913155636/rendition/1080p/file.mp4?loc=external&amp;signature=4fde946188b7e20322b8159688bffb0ed6f3087b429b0132d988b1ff22b8ba4f" autoPlay={true} loop={true} muted={true} playsInline={true}></video>
           </div>
           <div className="small_txt">Dinotaeng ® Since 2018</div>
         </div>

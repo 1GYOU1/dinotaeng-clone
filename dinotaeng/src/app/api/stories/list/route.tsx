@@ -1,12 +1,18 @@
 import MongoDB from "@/lib/mongodb"
 
-export async function GET (request) {
+interface Story {
+    Title: String,
+    Image: String,
+    Content: String
+}
+
+export async function GET (request: Request) {
     try {
         const db = new MongoDB()
         await db.init()
     
-        let storyData = await db.query('stories')
-        let storyList = []
+        let storyData:any = await db.query('stories')
+        let storyList:Story[] = []
         for (let story of storyData) {
             storyList.push({
                 'Title'     : story['title'],
@@ -20,7 +26,7 @@ export async function GET (request) {
             'message'   : '',
             'data'      : storyList
         })
-    } catch (e) {
+    } catch (e:any) {
         return Response.json({
             'result'    : false,
             'message'   : e.message

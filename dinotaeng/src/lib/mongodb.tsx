@@ -4,11 +4,11 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 export default class MongoDB {
-  constructor() {
-    this.uri = "mongodb+srv://dinotaeng:vzQsmjAGK1toVKd2@studydb.tlcucju.mongodb.net/?retryWrites=true&w=majority&appName=StudyDB"
-    this.client = null
-    this.db = null
-  }
+  uri:String = "mongodb+srv://dinotaeng:vzQsmjAGK1toVKd2@studydb.tlcucju.mongodb.net/?retryWrites=true&w=majority&appName=StudyDB"
+  client:any = null
+  db:any = null
+
+  constructor() {}
 
   /**
    * initialize
@@ -38,7 +38,7 @@ export default class MongoDB {
    * @param {*} collectionName 
    * @param {*} param 
    */
-  async insert(collectionName, param) {
+  async insert(collectionName:String, param:any) {
     try {
       const cursor = this.db.collection(collectionName)
       const result = await cursor.insertOne(param)
@@ -50,7 +50,7 @@ export default class MongoDB {
     }
   }
 
-  async query(collectionName, filter = {}) {
+  async query(collectionName:String, filter = {}) {
     try {
       const result = await this.db.collection(collectionName).find(filter).toArray()
 
