@@ -53,3 +53,8 @@ body {
 .header_area .header .header-right .mobile-btn{position:absolute;top:0;right:0;display:flex;flex-direction:column;justify-content:space-between;padding:30px;}
 .header_area .header .header-right .mobile-btn span{width:45px;height:5px;margin-bottom:5px;background-color:#B13F35;border-radius:5px;}
 .header_area .header .header-right .mobile-btn span:last-of-type{margin-bottom:0;}
+
+/* event_swiper */
+.event_slide_area{width:1000px;height:378px;margin:0 auto;}
+.event_slide_area .swiper-button-next,
+.event_slide_area .swiper-button-prev{color:#ddd;}
