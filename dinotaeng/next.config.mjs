@@ -4,6 +4,9 @@ const nextConfig = {
     webpack: (config, options) => {
         config.cache = false
         return config
+    },
+    compiler: {
+        styledComponents: true
     }
 }
 
