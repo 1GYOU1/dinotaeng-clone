@@ -33,28 +33,14 @@ body {
   url("/fonts/AmericusSansAged.woff")format("woff"),
 }
 
-/* common */
-.p_r{position:relative;}
-.pb20{padding-bottom:20px;}
-
 /* swiper */
 .swiper{width:100%;height:100%;}
 .swiper-slide{text-align:center;display:flex;justify-content:center;align-items:center;}
 .swiper-slide img{display:block;width:100%;height:100%;object-fit:cover;}
 
 /* header */
-.header_area{width:100%;position:fixed;top:0;left:0;}
 .header_area .header_notice{height:30px;text-align:center;line-height:30px;font-size:12px;font-weight:400;color:rgb(17, 17, 17);background:rgb(229, 223, 211);}
-.header_area .header .header-left{position:absolute;top:60px;left:30px;font-family:'AmericusSansAged';}
-.header_area .header .header-left a{font-family:'AmericusSansAged';color:#B13F35;}
-.header_area .header .header-center{position:absolute;top:60px;left:50%;transform:translateX(-50%);}
-.header_area .header .header-center img{min-height:20px;height:72px;margin:0 auto;display:block;}
-.header_area .header .header-right{position:absolute;top:30px;right:0;}
-.header_area .header .header-right .mobile-btn{position:absolute;top:0;right:0;display:flex;flex-direction:column;justify-content:space-between;padding:30px;}
-.header_area .header .header-right .mobile-btn span{width:45px;height:5px;margin-bottom:5px;background-color:#B13F35;border-radius:5px;}
-.header_area .header .header-right .mobile-btn span:last-of-type{margin-bottom:0;}
 
 /* event_swiper */
-.event_slide_area{width:1000px;height:378px;margin:0 auto;}
 .event_slide_area .swiper-button-next,
 .event_slide_area .swiper-button-prev{color:#ddd;}
