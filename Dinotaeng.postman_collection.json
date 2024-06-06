@@ -1,0 +1,31 @@
+{
+	"info": {
+		"_postman_id": "96af5c28-025f-4d15-8229-cca4b79ffa7f",
+		"name": "Dinotaeng",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8344849"
+	},
+	"item": [
+		{
+			"name": "Stories List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/stories/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"stories",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
