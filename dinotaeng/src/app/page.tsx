@@ -21,7 +21,9 @@ function Page() {
 
   return (
     <div className="w-full">
+
       <Header/>
+
       <div className="main_area pb-[5vw] bg-[#EFEDE6]">
 
         <div className="main_1 bg-[url('/images/main_bg.png')] bg-top bg-[length:100%_auto]">
@@ -171,6 +173,67 @@ function Page() {
               </li>
             </ul>
         </div>
+
+        <div className="main_6 mt-40">
+          <ul className="flex flex-wrap w-[95%] mx-auto">
+            <li className="w-1/4">
+              <Link href={'/'} className="block mx-10 mb-10">
+                <span className="relative">
+                  <img src="/images/main_product_1_hover.png" alt="메인 제품 이미지 1-1" />
+                  <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src="/images/main_product_1.png" alt="메인 제품 이미지 1" />
+                </span>
+                <p className="name pt-4 text-center text-[16px]">Oreo BOBO PLUSH TAG</p>
+                <p className="price text-center text-[14px]">₩16,000</p>
+              </Link>
+            </li>
+            <li className="w-1/4">
+              <Link href={'/'} className="block mx-10 mb-10">
+                <span className="relative">
+                  <img src="/images/main_product_1_hover.png" alt="메인 제품 이미지 1-1" />
+                 <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src="/images/main_product_1.png" alt="메인 제품 이미지 1" />
+                </span>
+                <p className="name pt-4 text-center text-[16px]">Oreo BOBO PLUSH TAG</p>
+                <p className="price text-center text-[14px]">₩16,000</p>
+              </Link>
+            </li>
+            <li className="w-1/4">
+              <Link href={'/'} className="block mx-10 mb-10">
+                <span className="relative">
+                  <img src="/images/main_product_1_hover.png" alt="메인 제품 이미지 1-1" />
+                 <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src="/images/main_product_1.png" alt="메인 제품 이미지 1" />
+                </span>
+                <p className="name pt-4 text-center text-[16px]">Oreo BOBO PLUSH TAG</p>
+                <p className="price text-center text-[14px]">₩16,000</p>
+              </Link>
+            </li>
+            <li className="w-1/4">
+              <Link href={'/'} className="block mx-10 mb-10">
+                <span className="relative">
+                  <img src="/images/main_product_1_hover.png" alt="메인 제품 이미지 1-1" />
+                 <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src="/images/main_product_1.png" alt="메인 제품 이미지 1" />
+                </span>
+                <p className="name pt-4 text-center text-[16px]">Oreo BOBO PLUSH TAG</p>
+                <p className="price text-center text-[14px]">₩16,000</p>
+              </Link>
+            </li>
+            <li className="w-1/4">
+              <Link href={'/'} className="block mx-10 mb-10">
+                <span className="relative">
+                  <img src="/images/main_product_1_hover.png" alt="메인 제품 이미지 1-1" />
+                 <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src="/images/main_product_1.png" alt="메인 제품 이미지 1" />
+                </span>
+                <p className="name pt-4 text-center text-[16px]">Oreo BOBO PLUSH TAG</p>
+                <p className="price text-center text-[14px]">₩16,000</p>
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div id="go_top">
+          <div className="arrow"><span></span><span></span></div>
+          <span>Top</span>
       </div>
 
     </div>
