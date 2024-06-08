@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link"
 import Header from "./header"
+import Footer from "./footer"
 import { useEffect } from 'react';
 
 // aos
@@ -20,11 +21,11 @@ function Page() {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#EFEDE6]">
 
       <Header/>
 
-      <div className="main_area pb-[5vw] bg-[#EFEDE6]">
+      <div className="main_area pb-[5vw]">
 
         <div className="main_1 bg-[url('/images/main_bg.png')] bg-top bg-[length:100%_auto]">
           <img src="/images/main_img.gif"/>
@@ -231,10 +232,7 @@ function Page() {
 
       </div>
 
-      <div id="go_top">
-          <div className="arrow"><span></span><span></span></div>
-          <span>Top</span>
-      </div>
+      <Footer/>
 
     </div>
   )
