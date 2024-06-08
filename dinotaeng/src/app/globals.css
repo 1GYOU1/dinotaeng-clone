@@ -8,16 +8,19 @@
   --background-end-rgb:255, 255, 255;
 }
 
-@media (prefers-color-scheme:dark) {
+/* @media (prefers-color-scheme:dark) {
   :root {
     --foreground-rgb:255, 255, 255;
     --background-start-rgb:0, 0, 0;
     --background-end-rgb:0, 0, 0;
   }
-}
+} */
 
 body {
   color:rgb(var(--foreground-rgb));
+  letter-spacing:0.5px;
+  margin:0;
+  padding:0;
 }
 
 @layer utilities {
@@ -32,15 +35,54 @@ body {
   src:url("/fonts/AmericusSansAged.eot"),
   url("/fonts/AmericusSansAged.woff")format("woff"),
 }
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 700;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/NanumSquare/NanumSquare-Bold.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/NanumSquare/NanumSquare-Bold.eot?#iefix') format('embedded-opentype'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/NanumSquare/NanumSquare-Bold.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/NanumSquare/NanumSquare-Bold.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/NanumSquare/NanumSquare-Bold.ttf') format("truetype");
+  font-display: swap;
+} 
 
 /* swiper */
-.swiper{width:100%;height:100%;}
-.swiper-slide{text-align:center;display:flex;justify-content:center;align-items:center;}
-.swiper-slide img{display:block;width:100%;height:100%;object-fit:cover;}
+.swiper {
+  @apply w-full h-full;
+}
+.swiper-slide {
+  @apply text-center flex justify-center items-center;
+}
+.swiper-slide img {
+  @apply block w-full h-full object-cover;
+}
 
-/* header */
-.header_area .header_notice{height:30px;text-align:center;line-height:30px;font-size:12px;font-weight:400;color:rgb(17, 17, 17);background:rgb(229, 223, 211);}
-
-/* event_swiper */
-.event_slide_area .swiper-button-next,
-.event_slide_area .swiper-button-prev{color:#ddd;}
+/* swiper-arrow */
+.swiper-arrow-prev, .swiper-arrow-next {
+  @apply absolute top-1/2 transform -translate-y-1/2 w-[50px] h-[56px];
+}
+.swiper-arrow-prev {
+  @apply left-[-60px];
+}
+.swiper-arrow-next {
+  @apply right-[-60px];
+}
+.swiper-arrow-prev:hover, .swiper-arrow-next:hover {
+  @apply cursor-pointer;
+}
+.swiper-arrow-prev:before, .swiper-arrow-prev:after, .swiper-arrow-next:before, .swiper-arrow-next:after {
+  @apply block absolute content-[""] w-[40px] h-[5px] bg-custom-gray rounded-[10px];
+}
+.swiper-arrow-prev:before {
+  @apply top-[13px] left-1/2 transform -translate-x-1/2 rotate-[-45deg];
+}
+.swiper-arrow-prev:after {
+  @apply bottom-[13px] left-1/2 transform -translate-x-1/2 rotate-[45deg];
+}
+.swiper-arrow-next:before {
+  @apply bottom-[13px] left-1/2 transform -translate-x-1/2 rotate-[-45deg];
+}
+.swiper-arrow-next:after {
+  @apply top-[13px] left-1/2 transform -translate-x-1/2 rotate-[45deg];
+}
