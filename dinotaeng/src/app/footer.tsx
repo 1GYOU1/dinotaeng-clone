@@ -33,16 +33,16 @@ function Footer() {
 
 				<div className="section3 w-[20%]">
 					<span className="M_mall_name">Dinotaeng.</span>
-					<br/><span className="M_ceo">Taeeun Kim</span>
+					<br/><span className="M_ceo">clone</span>
 					<br/><span className="M_email mun-lowercase">dinotaeng@dinotaeng.com</span>
 					<br/><span className="M_regno_2">2021-Seoulgangnam-04747</span>
 					<br/><Link href={'/'} className="M_regno_1" target="_blank">180-54-00314</Link>
 				</div>
 
 				<div className="section4 w-[20%]">
-					<a href="/member/agreement.html">Terms &amp; Conditions</a>
-					<br/><a href="/shopinfo/guide.html">Guide</a>
-					<br/><a href="/member/privacy.html">Policy Privacy</a>
+					<Link href={'/'}>Terms &amp; Conditions</Link>
+					<br/><Link href={'/'}>Guide</Link>
+					<br/><Link href={'/'}>Policy Privacy</Link>
 					<div className="made pt-6 text-[12px] text-[#efefef]">
 							©<span className="M_mall_name">Dinotaeng. </span>  
 						<Link href={'/'} target="_blank">clone coding ♡</Link>
