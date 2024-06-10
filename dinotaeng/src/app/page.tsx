@@ -1,4 +1,5 @@
 'use client'
+
 import Link from "next/link"
 import Header from "./header"
 import Footer from "./footer"
@@ -9,11 +10,7 @@ import styled from "./page.module.scss"
 import 'aos/dist/aos.css'
 import AOS from 'aos';
 
-// swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import { StoriesSwiperList } from "@/components/stories/Stories";
 
 // 메인 페이지
 function Page() {
@@ -52,46 +49,7 @@ function Page() {
         </div>
 
         <div className="main_4 my-44">
-          <p className="event_txt text-center text-[#111] text-[24px] leading-[34px] pb-[100px] font-['NanumSquare']" 
-          data-aos="fade-in" data-aos-once="true">
-            Peak our Stories!
-            <br/>마쉬빌 구석구석에서 벌어지는 즐거운 소식들을 찾아보세요
-          </p>
-          <div className="event_slide_area w-[80%] mx-auto relative">
-            <Swiper
-            className="event_slide"
-            spaceBetween={20}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            loop={true}
-            speed={1000}
-            modules={[Autoplay, Navigation]}
-            slidesPerView={2} 
-            navigation={
-              {
-                prevEl: ".swiper-arrow-prev",
-                nextEl: ".swiper-arrow-next",
-              }
-            }
-            >
-              <SwiperSlide>
-                <Link href={'/'}>
-                  <img src="/images/stories_2.jpg" alt="이벤트 이미지1" />
-                </Link>
-                <p className="text-left pt-[20px] text-[20px]">1. Sunshine in Marshville</p>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Link href={'/'}>
-                  <img src="/images/cfe23f6a4e9873da8ef18f6f14a0463e.jpg" alt="이벤트 이미지2" />
-                </Link>
-                <p className="text-left pt-[20px] text-[20px]">2. Snow in Marshville</p>
-              </SwiperSlide>
-            </Swiper>
-            <div className="swiper-arrow-prev"></div>
-            <div className="swiper-arrow-next"></div>
-          </div>
+            <StoriesSwiperList />
         </div>
 
         <div className="main_5">

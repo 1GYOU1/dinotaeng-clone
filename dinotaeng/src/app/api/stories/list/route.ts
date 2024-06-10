@@ -1,10 +1,4 @@
-import MongoDB from "@/lib/mongodb"
-
-interface Story {
-    Title: String,
-    Image: String,
-    Content: String
-}
+import MongoDB from "@/lib/MongoDBClass"
 
 export async function GET (request: Request) {
     try {
@@ -14,11 +8,7 @@ export async function GET (request: Request) {
         let storyData:any = await db.query('stories')
         let storyList:Story[] = []
         for (let story of storyData) {
-            storyList.push({
-                'Title'     : story['title'],
-                'Image'     : story['image'],
-                'Content'   : story['content'] || '',
-            })
+            storyList.push(story)
         }
 
         return Response.json({
