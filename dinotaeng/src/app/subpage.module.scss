@@ -6,9 +6,9 @@
   4. archive
 */
 
-$point-color: #B13F35;
-$point-family-1: 'AmericusSansAged';
-$point-family-2: 'NanumSquare';
+$point-color:#B13F35;
+$point-family-1:'AmericusSansAged';
+$point-family-2:'NanumSquare';
 
 // common
 .sub_wrap{
@@ -17,12 +17,12 @@ $point-family-2: 'NanumSquare';
 
 // about page
 .about_area{
-  position: relative;
-  min-height: 450px;
-  margin: 0 auto;
-  padding: 170px 20px 100px;
-  width: 100%;
-  max-width: 1064px;
+  position:relative;
+  min-height:450px;
+  margin:0 auto;
+  padding:170px 20px 100px;
+  width:100%;
+  max-width:1064px;
   .cont01{
     padding-bottom:200px;
     .img_box{
@@ -40,9 +40,9 @@ $point-family-2: 'NanumSquare';
   .cont02{
     padding-bottom:200px;
     h3{
-      padding-bottom: 60px;
-      font-size: 34px;
-      line-height: 40px;
+      padding-bottom:60px;
+      font-size:34px;
+      line-height:40px;
       color:$point-color;
       font-family:$point-family-1;
     }
@@ -53,9 +53,9 @@ $point-family-2: 'NanumSquare';
   .cont03{
     padding-bottom:200px;
     h3{
-      padding-bottom: 60px;
-      font-size: 34px;
-      line-height: 40px;
+      padding-bottom:60px;
+      font-size:34px;
+      line-height:40px;
       color:$point-color;
       font-family:$point-family-1;
     }
@@ -66,25 +66,59 @@ $point-family-2: 'NanumSquare';
 }
 
 // characters page
-
+.characters_area{
+  .cont01{
+    img{
+      width:100%;
+    }
+  }
+  .cont02{
+    font-size:65px;
+    line-height:75px;
+    text-align:center;
+    font-family:$point-family-1;
+    h4{
+      color:$point-color;
+      font-family:$point-family-1;
+    }
+    .img_box{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 5vw;
+      box-sizing:border-box;
+    }
+    ul{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:5vw;
+      li{
+        .s_btn{
+          &:hover{
+            cursor:pointer;
+          }
+        }
+      }
+    }
+  }
+}
 
 // stories page
 .stories_area{
   padding:132px 20px 100px 20px;
-  max-width: 1330px;
-  width: 69%;
-  margin: 0 auto;
-  box-sizing: border-box;
+  max-width:1330px;
+  width:69%;
+  margin:0 auto;
+  box-sizing:border-box;
   ul{
     width:100%;
-    display: flex;
+    display:flex;
     li{
       width:50%;
       margin:40px 20px;
       p{
         padding-top:20px;
-        font-size: 20px;
-        line-height: 25px;
+        font-size:20px;
+        line-height:25px;
         font-family:$point-family-2;
       }
     }
@@ -95,21 +129,21 @@ $point-family-2: 'NanumSquare';
 .archive_area{
   padding:132px 20px 100px 20px;
   .f_box{
-    width: 69%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    max-width: 1330px;
+    width:69%;
+    margin:0 auto;
+    box-sizing:border-box;
+    max-width:1330px;
     ul{
       display:flex;
       flex-wrap:wrap;
       li{
         width:50%;
-        padding: 40px 20px;
+        padding:40px 20px;
         p{
           padding-top:20px;
           font-size:20px;
-          line-height: 25px;
-          word-break: break-all;
+          line-height:25px;
+          word-break:break-all;
           font-family:$point-family-2;
         }
       }
