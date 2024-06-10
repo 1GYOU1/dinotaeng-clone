@@ -1,0 +1,118 @@
+/*
+  -- 하단 페이지 scss --
+  1. about
+  2. characters
+  3. stories
+  4. archive
+*/
+
+$point-color: #B13F35;
+$point-family-1: 'AmericusSansAged';
+$point-family-2: 'NanumSquare';
+
+// common
+.sub_wrap{
+  background:#fff;
+}
+
+// about page
+.about_area{
+  position: relative;
+  min-height: 450px;
+  margin: 0 auto;
+  padding: 170px 20px 100px;
+  width: 100%;
+  max-width: 1064px;
+  .cont01{
+    padding-bottom:200px;
+    .img_box{
+      padding-bottom:60px;
+    }
+    .text_box{
+      p{
+        margin-bottom:30px;
+        font-family:$point-family-2;
+        font-size:16px;
+        line-height:26px;
+      }
+    }
+  }
+  .cont02{
+    padding-bottom:200px;
+    h3{
+      padding-bottom: 60px;
+      font-size: 34px;
+      line-height: 40px;
+      color:$point-color;
+      font-family:$point-family-1;
+    }
+    p{
+      font-family:$point-family-2;
+    }
+  }
+  .cont03{
+    padding-bottom:200px;
+    h3{
+      padding-bottom: 60px;
+      font-size: 34px;
+      line-height: 40px;
+      color:$point-color;
+      font-family:$point-family-1;
+    }
+    p{
+      font-family:$point-family-2;
+    }
+  }
+}
+
+// characters page
+
+
+// stories page
+.stories_area{
+  padding:132px 20px 100px 20px;
+  max-width: 1330px;
+  width: 69%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  ul{
+    width:100%;
+    display: flex;
+    li{
+      width:50%;
+      margin:40px 20px;
+      p{
+        padding-top:20px;
+        font-size: 20px;
+        line-height: 25px;
+        font-family:$point-family-2;
+      }
+    }
+  }
+}
+
+// archive page
+.archive_area{
+  padding:132px 20px 100px 20px;
+  .f_box{
+    width: 69%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 1330px;
+    ul{
+      display:flex;
+      flex-wrap:wrap;
+      li{
+        width:50%;
+        padding: 40px 20px;
+        p{
+          padding-top:20px;
+          font-size:20px;
+          line-height: 25px;
+          word-break: break-all;
+          font-family:$point-family-2;
+        }
+      }
+    }
+  }
+}
