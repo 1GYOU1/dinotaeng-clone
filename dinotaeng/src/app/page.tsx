@@ -3,6 +3,7 @@ import Link from "next/link"
 import Header from "./header"
 import Footer from "./footer"
 import { useEffect } from 'react';
+import styled from "./page.module.scss"
 
 // aos
 import 'aos/dist/aos.css'
@@ -80,19 +81,7 @@ function Page() {
                   <img src="/images/stories_2.jpg" alt="이벤트 이미지1" />
                 </Link>
                 <p className="text-left pt-[20px] text-[20px]">1. Sunshine in Marshville</p>
-              </SwiperSlide>       
-              <SwiperSlide>
-                <Link href={'/'}>
-                  <img src="/images/cfe23f6a4e9873da8ef18f6f14a0463e.jpg" alt="이벤트 이미지2" />
-                </Link>
-                <p className="text-left pt-[20px] text-[20px]">2. Snow in Marshville</p>
               </SwiperSlide>
-              <SwiperSlide>
-                <Link href={'/'}>
-                  <img src="/images/stories_2.jpg" alt="이벤트 이미지1" />
-                </Link>
-                <p className="text-left pt-[20px] text-[20px]">1. Sunshine in Marshville</p>
-                </SwiperSlide>       
               <SwiperSlide>
                 <Link href={'/'}>
                   <img src="/images/cfe23f6a4e9873da8ef18f6f14a0463e.jpg" alt="이벤트 이미지2" />
@@ -106,68 +95,68 @@ function Page() {
         </div>
 
         <div className="main_5">
-            <ul className="flex flex-wrap">
-              <li className="w-1/4">
+            <ul className={styled.mainGallery}>
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_1.png" alt="메인 갤러리 리스트 1"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_2.jpeg" alt="메인 갤러리 리스트 2"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_3.png" alt="메인 갤러리 리스트 3"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_4.jpeg" alt="메인 갤러리 리스트 4"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_5.jpeg" alt="메인 갤러리 리스트 5"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_6.jpeg" alt="메인 갤러리 리스트 6"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_7.png" alt="메인 갤러리 리스트 7"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_8.png" alt="메인 갤러리 리스트 8"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_9.png" alt="메인 갤러리 리스트 9"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_10.png" alt="메인 갤러리 리스트 10"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_11.png" alt="메인 갤러리 리스트 11"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_12.png" alt="메인 갤러리 리스트 12"/>
                 </Link>
               </li>
-              <li className="w-1/4">
+              <li>
                 <Link href={'/'}>
                   <img src="/images/main_5_list_13.png" alt="메인 갤러리 리스트 13"/>
                 </Link>
