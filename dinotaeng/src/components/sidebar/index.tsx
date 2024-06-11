@@ -128,7 +128,7 @@ function SideBar({rightMenuShow, setRightMenuShow, backgroundBlock, setBackgroun
 				<div className="sec3 text-[22px] leading-[26px] font-['AmericusSansAged'] text-[#B13F35] py-[30px]">
 					<ul>
 						<li>
-							<div className="hover:cursor-pointer">COMMUNITY</div>
+							<div className="hover:cursor-pointer" onClick={communitySubMenuToggle}>COMMUNITY</div>
 							<div className={`${communitySubMenuShow ? '' : 'hidden'}`}> 
 								<ul className="text-[20px] leading-[23px] text-[#563D4A] ps-[10px] pt-[5px] pb-[20px]">
 									<li>
