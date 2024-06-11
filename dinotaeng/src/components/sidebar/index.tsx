@@ -87,40 +87,40 @@ function SideBar({rightMenuShow, setRightMenuShow, backgroundBlock, setBackgroun
 							<div className={`${shopSubMenuShow ? '' : 'hidden'}`}>
 								<ul className="text-[20px] leading-[23px] text-[#563D4A] ps-[10px] pt-[5px] pb-[20px]">
 									<li>
-										<Link className="block" href={'/'}>NEW</Link>
+										<Link className="block" href={'/'} onClick={headerRightMenu}>NEW</Link>
 									</li>
 									<li>
-										<Link className="block" href={'/'}>BEST</Link>
+										<Link className="block" href={'/'} onClick={headerRightMenu}>BEST</Link>
 									</li>
 									<li>
-										<Link className="block" href={'/'}>STATIONERY</Link>
+										<Link className="block" href={'/'} onClick={headerRightMenu}>STATIONERY</Link>
 									</li>
 									<li>
-										<Link className="block" href={'/'}>MOBILE</Link>
+										<Link className="block" href={'/'} onClick={headerRightMenu}>MOBILE</Link>
 									</li>
 									<li>
-										<Link className="block" href={'/'}>LIVING</Link>
+										<Link className="block" href={'/'} onClick={headerRightMenu}>LIVING</Link>
 									</li>
 									<li>
-										<Link className="block" href={'/'}>OTHERS</Link>
+										<Link className="block" href={'/'} onClick={headerRightMenu}>OTHERS</Link>
 									</li>
 									<li>
-										<Link className="block" href={'/'}>SALE</Link>
+										<Link className="block" href={'/'} onClick={headerRightMenu}>SALE</Link>
 									</li>
 								</ul>
 							</div>
 						</li>
 						<li>
-							<Link className="block" href={'/about'}>ABOUT</Link>
+							<Link className="block" href={'/about'} onClick={headerRightMenu}>ABOUT</Link>
 						</li>
 						<li>
-							<Link className="block" href={'/characters'}>CHARACTERS</Link>
+							<Link className="block" href={'/characters'} onClick={headerRightMenu}>CHARACTERS</Link>
 						</li>
 						<li>
-							<Link className="block" href={'/stories'}>STORIES</Link>
+							<Link className="block" href={'/stories'} onClick={headerRightMenu}>STORIES</Link>
 						</li>
 						<li>
-							<Link className="block" href={'/archive'}>ARCHIVE</Link>
+							<Link className="block" href={'/archive'} onClick={headerRightMenu}>ARCHIVE</Link>
 						</li>
 					</ul>
 				</div>
@@ -128,35 +128,35 @@ function SideBar({rightMenuShow, setRightMenuShow, backgroundBlock, setBackgroun
 				<div className="sec3 text-[22px] leading-[26px] font-['AmericusSansAged'] text-[#B13F35] py-[30px]">
 					<ul>
 						<li>
-							<div className="hover:cursor-pointer" onClick={communitySubMenuToggle}>COMMUNITY</div>
+							<div className="hover:cursor-pointer">COMMUNITY</div>
 							<div className={`${communitySubMenuShow ? '' : 'hidden'}`}> 
 								<ul className="text-[20px] leading-[23px] text-[#563D4A] ps-[10px] pt-[5px] pb-[20px]">
 									<li>
-										<Link href={'/community/notice'}>NOTICE</Link>
+										<Link href={'/community/notice'} onClick={headerRightMenu}>NOTICE</Link>
 									</li>
 									<li>
-										<Link href={'/community/qna'}>Q&A</Link>
+										<Link href={'/community/qna'} onClick={headerRightMenu}>Q&A</Link>
 									</li>
 									<li>
-										<Link href={'/community/review'}>REVIEW</Link>
+										<Link href={'/community/review'} onClick={headerRightMenu}>REVIEW</Link>
 									</li>
 								</ul>
 							</div>
 						</li>
 						<li>
-							<Link href={'/stockist'}>STOCKIST</Link>
+							<Link href={'/stockist'} onClick={headerRightMenu}>STOCKIST</Link>
 						</li>
 						<li>
-							<Link href={'/member/order'}>ORDER</Link>
+							<Link href={'/member/order'} onClick={headerRightMenu}>ORDER</Link>
 						</li>
 						<li>
-							<Link href={'/'}>MY ACCOUNT</Link>
+							<Link href={'/'} onClick={headerRightMenu}>MY ACCOUNT</Link>
 						</li>
 						<li>
-							<Link href={'/order/cart'}>CART 0</Link>
+							<Link href={'/order/cart'} onClick={headerRightMenu}>CART 0</Link>
 						</li>
 						<li>
-							<Link href={'/member/login'}>LOGIN</Link>
+							<Link href={'/member/login'} onClick={headerRightMenu}>LOGIN</Link>
 						</li>
 					</ul>
 				</div>
