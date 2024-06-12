@@ -173,5 +173,14 @@ $point-family-2:'NanumSquare';
         color:$point-color;
       }
     }
+
+    .flex_wrap{
+      ul{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:space-around;
+      }
+    }
   }
 }

@@ -14,6 +14,7 @@ function Page() {
 
       <div className={styled.product_area}>
         <div className={styled.cont_wrap}>
+
           <ul className={styled.category}>
             <li><Link href="">NEW</Link></li>
             <li><Link href="">BEST</Link></li>
@@ -23,6 +24,13 @@ function Page() {
             <li><Link href="">OTHERS</Link></li>
             <li><Link href="">SALE</Link></li>
           </ul>
+
+          <div className={styled.flex_wrap}>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+
         </div>
       </div>
 
