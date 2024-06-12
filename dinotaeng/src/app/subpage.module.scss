@@ -150,3 +150,28 @@ $point-family-2:'NanumSquare';
     }
   }
 }
+
+// product page
+.product_area{
+  padding-top:132px;
+
+  .cont_wrap{
+    width: 81%;
+    margin: 0 auto;
+    padding: 0px 20px;
+    box-sizing: border-box;
+
+    .category{
+      font-family:$point-family-1;
+      display:flex;
+      justify-content:space-around;
+      padding:30px 0 70px;
+      font-size:26px;
+      line-height:30px;
+
+      li{
+        color:$point-color;
+      }
+    }
+  }
+}
