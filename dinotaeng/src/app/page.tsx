@@ -3,8 +3,9 @@
 import Link from "next/link"
 import Header from "./header"
 import Footer from "./footer"
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styled from "./page.module.scss"
+import { fetchGallery } from "@/fetch/fetchGallery";
 
 // aos
 import 'aos/dist/aos.css'
@@ -14,6 +15,18 @@ import { StoriesSwiperList } from "@/components/stories/Stories";
 
 // 메인 페이지
 function Page() {
+  const [galleryList, setGalleryList] = useState<any[]>()
+
+    useEffect(() => {
+      // useEffect를 이용하여 데이터를 1회 호출한다
+      const init = async () => {
+          const { data } = await fetchGallery()
+          setGalleryList(data)
+          console.log(data)
+      }
+      init()
+    }, []);
+
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
@@ -54,71 +67,13 @@ function Page() {
 
         <div className="main_5">
             <ul className={styled.mainGallery}>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_1.png" alt="메인 갤러리 리스트 1"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_2.jpeg" alt="메인 갤러리 리스트 2"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_3.png" alt="메인 갤러리 리스트 3"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_4.jpeg" alt="메인 갤러리 리스트 4"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_5.jpeg" alt="메인 갤러리 리스트 5"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_6.jpeg" alt="메인 갤러리 리스트 6"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_7.png" alt="메인 갤러리 리스트 7"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_8.png" alt="메인 갤러리 리스트 8"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_9.png" alt="메인 갤러리 리스트 9"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_10.png" alt="메인 갤러리 리스트 10"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_11.png" alt="메인 갤러리 리스트 11"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_12.png" alt="메인 갤러리 리스트 12"/>
-                </Link>
-              </li>
-              <li>
-                <Link href={'/'}>
-                  <img src="/images/main_5_list_13.png" alt="메인 갤러리 리스트 13"/>
-                </Link>
-              </li>
+              {galleryList && galleryList.map((item:any) => (
+                  <li key={`stories${item._id}`}>
+                      <Link href={'/'}>
+                      <img src={item.thumbnail} />
+                      </Link>
+                  </li>
+              ))}
             </ul>
         </div>
 
