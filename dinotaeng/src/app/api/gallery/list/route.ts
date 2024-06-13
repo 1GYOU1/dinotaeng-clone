@@ -10,7 +10,7 @@ export async function GET (request: Request) {
         return Response.json({
             'result'    : true,
             'message'   : '',
-            'data'      : []
+            'data'      : galleryData
         })
     } catch (e:any) {
         return Response.json({
