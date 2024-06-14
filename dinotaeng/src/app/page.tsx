@@ -70,7 +70,7 @@ function Page() {
               {galleryList && galleryList.map((item:any) => (
                   <li key={`stories${item._id}`}>
                       <Link href={'/'}>
-                      <img src={item.thumbnail} />
+                        <img src={item.thumbnail} alt={item.name}/>
                       </Link>
                   </li>
               ))}
