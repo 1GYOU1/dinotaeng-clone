@@ -5,7 +5,7 @@ import Header from "./header"
 import Footer from "./footer"
 import { useEffect, useState } from 'react';
 import styled from "./page.module.scss"
-import { fetchGallery } from "@/fetch/fetchGallery";
+import { fetchGalleryList } from "@/fetch/fetchGalleryList";
 
 // aos
 import 'aos/dist/aos.css'
@@ -20,9 +20,8 @@ function Page() {
     useEffect(() => {
       // useEffect를 이용하여 데이터를 1회 호출한다
       const init = async () => {
-          const { data } = await fetchGallery()
+          const { data } = await fetchGalleryList()
           setGalleryList(data)
-          console.log(data)
       }
       init()
     }, []);
@@ -69,7 +68,7 @@ function Page() {
             <ul className={styled.mainGallery}>
               {galleryList && galleryList.map((item:any) => (
                   <li key={`stories${item._id}`}>
-                      <Link href={'/'}>
+                      <Link href={`/gallery/${item._id}`}>
                         <img src={item.thumbnail} alt={item.name}/>
                       </Link>
                   </li>

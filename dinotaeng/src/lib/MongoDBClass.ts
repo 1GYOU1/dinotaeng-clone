@@ -111,4 +111,15 @@ export default class MongoDB {
       return e
     }
   }
+
+  async queryOne(collectionName:string, filter = {}) {
+    try {
+      const result = await this.db.collection(collectionName).find(filter).toArray()
+
+      return result[0]
+    } catch (e) {
+      console.log(e)
+      return e
+    }
+  }
 }

@@ -20,7 +20,7 @@ export default class Api {
     })
   }
 
-  async get(url:string, params:any) {
+  async get(url:string, params?:any) {
     return this.ax.get(url, params)
   }
 }
