@@ -124,6 +124,16 @@ $point-family-2:'NanumSquare';
     }
   }
 }
+.stories_detail{
+  width:100%;
+  max-width:1064px;
+  margin:0 auto;
+  div{
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+  }
+}
 
 // archive page
 .archive_area{
@@ -180,6 +190,105 @@ $point-family-2:'NanumSquare';
         flex-direction:row;
         flex-wrap:wrap;
         justify-content:space-around;
+      }
+    }
+  }
+}
+
+// cart page
+.cart_area{
+  width:100%;
+  max-width:1064px;
+  padding:170px 60px 100px;
+  margin:0 auto;
+  .menu{
+    margin-bottom:5px;
+    ul{
+      display:flex;
+      li{
+        &.selected{
+          a{
+            text-decoration:underline;
+            font-weight:400;
+          }
+        }
+        a{
+          display:block;
+          padding:0 5px 11px;
+          text-decoration:none;
+          outline:0;
+          text-align:center;
+          font-size:11px;
+          font-family:$point-family-2;
+        }
+      }
+    }
+  }
+  .empty_cart_area{
+    padding:50px 0;
+    text-align:center;
+    border:1px solid #111;
+    border-left:none;
+    border-right:none;
+    p{
+      font-size:12px;
+    }
+  }
+  .btn_area{
+    padding-top:10px;
+    text-align:right;
+    .order_btn{
+      display:inline-block;
+      width:50%;
+      max-width:150px;
+      height:30px;
+      line-height:30px;
+      color:#fff;
+      text-align:center;
+      text-decoration:none;
+      text-transform:capitalize;
+      background:#000;
+      border-radius:0px;
+      font-size:12px;
+    }
+  }
+}
+
+// stockist page
+.stockist_area{
+  width: 100%;
+  max-width: 1064px;
+  position: relative;
+  min-height: 450px;
+  margin: 0 auto;
+  padding: 170px 60px 100px;
+  box-sizing: border-box;
+  h4{
+    font-size: 34px;
+    line-height: 40px;
+    color:$point-color;
+    font-family:$point-family-1;
+  }
+  ul{
+    padding-top:20px;
+    li{
+      padding-top:30px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+  .cont02{
+    margin:200px 0;
+    display:flex;
+    .f_box{ 
+      width:50%;
+      li{
+        a{
+          &:hover{
+            color:#888;
+            transition:all ease 0.5s;
+          }
+        }
       }
     }
   }

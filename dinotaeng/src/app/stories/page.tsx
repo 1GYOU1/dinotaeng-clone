@@ -33,22 +33,33 @@ function Page() {
     init()
   }, []);
 
+  const noneContent = () => {
+    alert('컨텐츠가 없습니다 !')
+  }
+
   return (
     <div className={styled.sub_wrap}>
 
         <Header/>
         
         <div className={styled.stories_area}>
-        <ul>
-        {storiesList && storiesList.map((item:any) => (
-          <li key={item._id}>
-            <Link href={'/'}>
-              <img src={item.image} alt={item.title}/>
-              <p>{item.title}</p>
-            </Link>
-          </li>
-        ))}
-        </ul>
+          <ul>
+          {storiesList && storiesList.map((item:any) => (
+            <li key={item._id}>
+              {item.content ? (
+                <Link href={`/stories/${item._id}?content=${item.content}`}>
+                  <img src={item.image} alt={item.title}/>
+                  <p>{item.title}</p>
+                </Link>
+              ) : (
+                <div onClick={noneContent}>
+                  <img src={item.image} alt={item.title}/>
+                  <p>{item.title}</p>
+                </div>
+              )}
+            </li>
+          ))}
+          </ul>
         </div>
 
         <Footer/>
