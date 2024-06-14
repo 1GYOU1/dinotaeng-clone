@@ -1,11 +1,38 @@
+'use client';
+
 import Header from "../header"
 import Footer from "../footer"
 import styled from "../subpage.module.scss"
 import Link from "next/link"
+import Api from "@/lib/ApiClass";
+
+import { useEffect, useState } from "react"
+
+interface Props {
+  data: any[]
+}
 
 // stories page
-
 function Page() {
+
+  // api 한번에 호출
+  const [storiesList, setStoriesList] = useState<any[]>()
+  
+  useEffect(() => {
+    const init = async () => {
+      try {
+        const api = new Api()
+        const {data} = await api.get('/ax/stories/list', {})
+   
+        setStoriesList(data.data)
+        // console.log(data.data)
+      } catch(e:any) {
+        return { result: false, message: e.message }
+      }
+    }
+    init()
+  }, []);
+
   return (
     <div className={styled.sub_wrap}>
 
@@ -13,18 +40,14 @@ function Page() {
         
         <div className={styled.stories_area}>
         <ul>
-          <li>
+        {storiesList && storiesList.map((item:any) => (
+          <li key={item._id}>
             <Link href={'/'}>
-              <img src="/images/stories_2.jpg" alt="stories 이미지 1"/>
-              <p>1. Sunshine in Marshville</p>
+              <img src={item.image} alt={item.title}/>
+              <p>{item.title}</p>
             </Link>
           </li>
-          <li>
-            <Link href={'/'}>
-              <img src="/images/cfe23f6a4e9873da8ef18f6f14a0463e.jpg" alt="stories 이미지 2"/>
-              <p>2. Snow in Marshville</p>
-            </Link>
-          </li>
+        ))}
         </ul>
         </div>
 
