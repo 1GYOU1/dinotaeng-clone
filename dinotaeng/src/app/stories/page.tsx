@@ -52,7 +52,7 @@ function Page() {
                   <p>{item.title}</p>
                 </Link>
               ) : (
-                <div onClick={noneContent}>
+                <div className="hover:cursor-pointer" onClick={noneContent}>
                   <img src={item.image} alt={item.title}/>
                   <p>{item.title}</p>
                 </div>
