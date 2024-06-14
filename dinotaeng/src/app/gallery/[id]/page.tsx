@@ -1,8 +1,17 @@
 'use client'
 
+import Header from "../../header"
+import Footer from "../../footer"
+import styled from "../../subpage.module.scss"
+
 import { fetchGallery } from "@/fetch/fetchGallery"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 interface Props {
   params: {
@@ -10,6 +19,7 @@ interface Props {
   }
 }
 
+// gallery detail page
 function Page({params}: Props) {
   const [galleryData, setGalleryData] = useState<any[]>()
 
@@ -22,10 +32,33 @@ function Page({params}: Props) {
     }
     init()
   }, [])
+
   return (
-    <div className="w-full">
-    <p>gallery</p>
-    <Link href={`https://dinotaeng.com/mundane/html/product/journal_detail.html?product_no=249&cate_no=1&display_group=12`} target="_blank">https://dinotaeng.com/mundane/html/product/journal_detail.html?product_no=249&cate_no=1&display_group=12</Link>
+    <div className={styled.sub_wrap}>
+      <Header/>
+
+      {/* {galleryData && (
+        <>
+          <Swiper className="event_slide"
+            spaceBetween={20}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            loop={true}
+            speed={1000}
+            modules={[Autoplay, Navigation]}
+            slidesPerView={2}
+            navigation={{ prevEl: ".swiper-arrow-prev", nextEl: ".swiper-arrow-next" }}>
+            {galleryData.map((item:Story) => (
+              <SwiperSlide>
+                <p>test</p>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="swiper-arrow-prev"></div>
+          <div className="swiper-arrow-next"></div>
+        </>
+      )} */}
+
+      <Footer/>
     </div>
   )
 }

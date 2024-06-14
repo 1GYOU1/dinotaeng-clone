@@ -1,14 +1,35 @@
 'use client'
 
-import Link from "next/link"
-import { useParams } from "next/navigation"
+import Header from "../../header"
+import Footer from "../../footer"
+import styled from "../../subpage.module.scss"
+import { useParams, useSearchParams } from "next/navigation"
+// import { useEffect } from "react"
 
+// stories detail page
 function Page() {
-  const params = useParams()
+  const params = useParams();
+  const searchParams = useSearchParams();
+  const content = searchParams.get("content");
+
+  // useEffect(() => {
+  //   console.log('params:', params);
+  //   console.log('content:', content);
+  // }, []);
+
   return (
-    <div className="w-full">
-      <p>Stories Detail {params.idx}</p>
-      <Link href={`https://dinotaeng.com/mundane/html/product/journal_detail2.html?product_no=247&cate_no=179&display_group=1`} target="_blank">https://dinotaeng.com/mundane/html/product/journal_detail2.html?product_no=247&cate_no=179&display_group=1</Link>
+    <div className={styled.sub_wrap}>
+
+        <Header/>
+        
+        <div className={styled.stories_detail}>
+
+          <div dangerouslySetInnerHTML={{ __html: content }}></div>
+        
+        </div>
+
+        <Footer/>
+
     </div>
   )
 }
