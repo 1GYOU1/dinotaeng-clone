@@ -21,7 +21,11 @@ interface Props {
 
 // gallery detail page
 function Page({params}: Props) {
+  // 1. Gallery 인터페이스 만들기
+  // api 리턴값을 확인하여 interface.ts 파일에 Gallery 타입 완성시키고 any[] 대신에 Gallery[] 로 변경하여 사용하기
   const [galleryData, setGalleryData] = useState<any[]>()
+
+  // 2. 해당 state 변수는 중복사용으로 위 galleryData변수로 모두 구현 가능하므로 제거하기
   const [galleryImages, setGalleryImagesData] = useState<any[]>()
   useEffect(() => {
 
