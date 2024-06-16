@@ -19,7 +19,7 @@ export default class MongoDB {
         version: ServerApiVersion.v1,
         strict: true,
         deprecationErrors: true,
-      }
+      },
     });
     try {
       await client.connect()
@@ -101,11 +101,29 @@ export default class MongoDB {
    * @param filter 
    * @returns 
    */
-  async query(collectionName:string, filter = {}) {
+  async query(collectionName:string, filter = {}, param:any = {}) {
     try {
-      const result = await this.db.collection(collectionName).find(filter).toArray()
+      let query = this.db.collection(collectionName)
 
-      return result
+      if (filter) {
+        query = query.find(filter)
+      }
+
+      if (param?.page && param?.perPage) {
+        const totalCount:number = await query.count()
+        const totalPage:number = Math.ceil(totalCount / parseInt(param.perPage))
+
+        query = query.skip((parseInt(param.page) - 1) * parseInt(param.perPage)).limit(parseInt(param.perPage))
+
+        return {
+          'currentPage': param.page,
+          'totalCount': totalCount,
+          'totalPage': totalPage,
+          'data': await query.toArray()
+        }
+      }
+
+      return await query.toArray()
     } catch (e) {
       console.log(e)
       return e
