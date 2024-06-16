@@ -161,6 +161,28 @@ $point-family-2:'NanumSquare';
   }
 }
 
+// gallery page
+.gallery_area{
+  padding:170px 0 150px;
+  .detail_txt{
+    text-align:center;
+    padding:50px 0;
+    .name{
+      font-size:20px;
+      line-height:25px;
+    }
+    .summary{
+      padding:15px 0 50px;
+      font-size:18px;
+      line-height:23px;
+    }
+    .simple{
+      font-size:16px;
+      line-height:26px;
+    }
+  }
+}
+
 // product page
 .product_area{
   padding-top:132px;
