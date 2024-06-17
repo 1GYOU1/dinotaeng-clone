@@ -160,10 +160,27 @@ $point-family-2:'NanumSquare';
     }
   }
 }
+// archive detail page
+.archive_detail_area{
+  width:100%;
+  max-width:1064px;
+  margin:0 auto;
+  img{
+    display:block;
+    margin:0px auto;
+    text-align:center;
+  }
+}
 
 // gallery page
 .gallery_area{
   padding:170px 0 150px;
+  .gallery_slide{
+    width:100%;
+    margin:0 auto;
+    margin-left:-239px;
+    overflow:visible;
+  }
   .detail_txt{
     text-align:center;
     padding:50px 0;
@@ -188,10 +205,10 @@ $point-family-2:'NanumSquare';
   padding-top:132px;
 
   .cont_wrap{
-    width: 81%;
-    margin: 0 auto;
-    padding: 0px 20px;
-    box-sizing: border-box;
+    width:81%;
+    margin:0 auto;
+    padding:0px 20px;
+    box-sizing:border-box;
 
     .category{
       font-family:$point-family-1;
@@ -321,16 +338,16 @@ $point-family-2:'NanumSquare';
 
 // stockist page
 .stockist_area{
-  width: 100%;
-  max-width: 1064px;
-  position: relative;
-  min-height: 450px;
-  margin: 0 auto;
-  padding: 170px 60px 100px;
-  box-sizing: border-box;
+  width:100%;
+  max-width:1064px;
+  position:relative;
+  min-height:450px;
+  margin:0 auto;
+  padding:170px 60px 100px;
+  box-sizing:border-box;
   h4{
-    font-size: 34px;
-    line-height: 40px;
+    font-size:34px;
+    line-height:40px;
     color:$point-color;
     font-family:$point-family-1;
   }
@@ -338,8 +355,8 @@ $point-family-2:'NanumSquare';
     padding-top:20px;
     li{
       padding-top:30px;
-      font-size: 16px;
-      line-height: 26px;
+      font-size:16px;
+      line-height:26px;
     }
   }
   .cont02{

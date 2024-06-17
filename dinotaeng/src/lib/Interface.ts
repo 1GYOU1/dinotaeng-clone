@@ -4,3 +4,11 @@ interface Story {
     image: string,
     content: string
 }
+interface Gallery {
+    _id: string
+    thumbnail: string,
+    name: string,
+    summary: string,
+    simple: string,
+    images: string[],
+}
