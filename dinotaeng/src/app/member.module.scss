@@ -1,0 +1,308 @@
+/*
+  -- 하단 페이지 scss --
+  1. about
+  2. characters
+  3. stories
+  4. archive
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+$point-color:#B13F35;
+$point-family-1:'AmericusSansAged';
+$point-family-2:'NanumSquare';
+$point-family-3:"Noto Sans KR", sans-serif;
+
+// common
+.member_wrap{
+  background:#fff;
+  margin:0;
+  padding:0;
+}
+
+// login page
+.login_area{
+  margin:0 auto;
+  max-width:420px;
+  .top_nav{
+    display:flex;
+    justify-content:space-between;
+    padding:17px 20px;
+    div{
+      width:16px;
+      height:16px;
+    }
+    .back_btn{
+      background: url('../../public/images/login_back_ico.png') no-repeat 0;
+      background-size:auto 16px;
+    }
+    .home_btn{
+      background: url('../../public/images/login_home_ico.png') no-repeat 0;
+      background-size:auto 16px;
+    }
+  }
+  .logo{
+    padding:5px 20px 0;
+    text-align:center;
+    img{
+      display:inline-block;
+      max-width:50%;
+      max-height:60px;
+      vertical-align:baseline;
+    }
+  }
+
+  .inner{
+    padding:0 20px;
+  }
+
+  .login_cont01{
+    position:relative;
+    width:100%;
+    padding:34px 0;
+    .title{
+      margin:0 0 5px;
+      color:#222;
+      font-size:23px;
+      font-weight:700;
+      font-family:$point-family-3;
+    }
+    .text{
+      margin-bottom:15px;
+      font-size:15px;
+      font-weight:400;
+      color:#222;
+      font-family:$point-family-3;
+    }
+    .basic_btn{
+      font-family:$point-family-3;
+      font-weight:500;
+      > a{
+        padding:0 0 0 20px;
+        display:inline-block;
+        width:100%;
+        height:54px;
+        border-radius:10px;
+        box-sizing:border-box;
+        text-align:center;
+        cursor:pointer;
+        line-height:54px;
+        font-size:17px;
+        &.btn_kakao{
+          background-color:#fee500;
+          color:#111;
+          background-repeat:no-repeat;
+          background-size:22px;
+          background-position:20px;
+          background-image: url('//storage.keepgrow.com/admin/campaign/20200611043456590.svg');
+        }
+        &.btn_naver{
+          margin-top:10px;
+          background-color:#02c659;
+          color:#fff;
+          background-repeat:no-repeat;
+          background-size:22px;
+          background-position:20px;
+          background-image: url('//storage.keepgrow.com/admin/20230627004811200.svg');
+        }
+      }
+    }
+  }
+  .cont_banner{
+    margin-top:-10px;
+    padding-bottom:30px;
+    width:100%;
+  }
+  .login_cont02{
+    position:relative;
+    width:100%;
+    padding:34px 0;
+    border-top:1px solid #f5f5f5;
+    .tab_menu{
+      margin-bottom:15px;
+      padding:3px;
+      font-size:0;
+      letter-spacing:0;
+      border-radius:20px;
+      background:#f6f7f9;
+
+      &::after{
+        position:absolute;
+        top:-8px;
+        left:50%;
+        content:"또는";
+        margin:0 auto;
+        padding:0 10px;
+        background:#fff;
+        font-size:12px;
+        color:#b2b2b2;
+        -webkit-transform:translateX(-50%);
+        -ms-transform:translateX(-50%);
+        transform:translateX(-50%);
+      }
+      li{
+        display:inline-block;
+        width:50%;
+        &.active{
+          a{
+            position:relative;
+            background:#222;
+            border:unset;
+            color:#fff
+          }
+        }
+        a{
+          display:inline-block;
+          width:100%;
+          height:34px;
+          line-height:32px;
+          background:#f6f7f9;
+          border:unset;
+          border-radius:17px;
+          font-size:15px;
+          font-weight:400;
+          text-align:center;
+          color:#888;
+          box-sizing:border-box;
+          font-family:$point-family-3;
+        }
+      }
+    }
+
+    .cont_member{
+      font-family:$point-family-3;
+      .mamber_id_box{
+        input{
+          width:100%;
+          height:50px;
+          line-height:50px;
+          border:none;
+          border-bottom:1px solid #e5e5e5;
+          border-radius:unset;
+          font-size:15px;
+          color:#000;
+          box-sizing:border-box;
+          outline:none;
+        } 
+      }
+      .passwd_box{
+        position:relative;
+        input{
+          padding-right:38px;
+          margin-top:10px;
+          width:100%;
+          height:50px;
+          line-height:50px;
+          border:none;
+          border-bottom:1px solid #e5e5e5;
+          border-radius:unset;
+          font-size:15px;
+          color:#000;
+          box-sizing:border-box;
+          outline:none;
+        }
+        .chk_passwd{
+          content:"";
+          position:absolute;
+          padding:18px 10px 19px;
+          top:0;
+          right:0;
+          width:38px;
+          height:100%;
+          background: url('../../public/images/login_pw_off.png') no-repeat 10px;
+          background-size:18px;
+          z-index:1;
+          cursor:pointer;
+          &.active{
+            background-image: url('../../public/images/login_pw_on.png');
+          }
+        }
+      }
+      .login_chk_box{
+        margin:15px 0;
+        li{
+          input{
+            position:relative;
+            top:0;
+            margin:0 5px 0 0;
+            width:24px;
+            height:24px;
+            border:1px solid #c5c5c5;
+            background-color:#fff;
+            border-radius:100%;
+            -webkit-appearance:none;
+            background:unset;
+            &:checked{
+              border:unset;
+              background-color:#222;
+              background-image: url('//storage.keepgrow.com/admin/20230626000555378.png');
+              background-size:9.5px;
+              background-position:50%;
+              background-repeat:no-repeat;
+            }
+          }
+          label{
+            font-size:15px;
+            font-weight:400;
+            line-height:normal;
+            vertical-align:top;
+            cursor:pointer;
+          }
+        }
+      }
+      .login_btn{
+        display:inline-block;
+        width:100%;
+        height:54px;
+        max-height:unset;
+        line-height:54px;
+        border:1px;
+        border-radius:10px;
+        box-sizing:border-box;
+        text-align:center;
+        cursor:pointer;
+        background:#f6f7f9;
+        font-size:17px;
+        color:#222;
+        font-weight:500;
+      }
+      .find_join_area{
+        margin-top:15px;
+        width:100%;
+        a{
+          border-left:none;
+          display:inline-block;
+          margin-left:10.5px;
+          padding-left:10.5px;
+          font-size:15px;
+          font-weight:400;
+          color:#888;
+
+            &:first-of-type{
+              margin-left:0;
+              padding-left:0;
+            }
+            &:nth-of-type(2){
+              position:relative;
+                &::before{
+                content:"";
+                position:absolute;
+                top:50%;
+                left:0;
+                margin-top:-7px;
+                width:1px;
+                height:14px;
+                background:#e1e1e1;
+            }
+          }
+          &.right{
+            float:right;
+            border-left:none;
+            color:#222;
+          }
+        }
+      }
+    }
+  }
+}
+
