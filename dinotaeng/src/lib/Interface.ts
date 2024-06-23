@@ -12,3 +12,9 @@ interface Gallery {
     simple: string,
     images: string[],
 }
+interface characters {
+    _id: string
+    thumbnail: string,
+    name: string,
+    description: string,
+}
