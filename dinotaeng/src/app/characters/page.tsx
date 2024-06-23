@@ -1,10 +1,33 @@
+'use client'
+
 import Header from "../header"
 import Footer from "../footer"
 import styled from "../subpage.module.scss"
-import Link from "next/link"
+import { useEffect, useState } from "react"
+import { fetchCharactersList } from "@/fetch/fetchCharacters"
 
+interface Props {
+  data: characters[]
+}
+
+//characters
 function Page() {
+
+  const [charactersData, setCharactersData] = useState<characters[]>()
+
+  useEffect(() => {
+
+    const init = async () => {
+      const { data } = await fetchCharactersList({});
+      setCharactersData(data)
+      // console.log(data)
+    }
+    init()
+
+  }, [])
+
   return (
+    <>
     <div className={styled.sub_wrap}>
       <Header/>
 
@@ -16,51 +39,13 @@ function Page() {
           <h4>Meet our villagers</h4>
           <div className={styled.img_box}>
             <ul>
-              <li>
-                <div className={styled.s_btn} /* onClick={} */>
-                  <img src="/images/characters_img_1.gif" alt="characters 이미지 1"/>
+            {charactersData && charactersData.map((item: characters) => (
+              <li key={item._id}>
+                <div className={styled.s_btn}>
+                  <img src={item.thumbnail} alt={item.name}/>
                 </div>
               </li>
-              <li>
-                <div className={styled.s_btn} /* onClick={} */>
-                  <img src="/images/characters_img_2.gif" alt="characters 이미지 2"/>
-                </div>
-              </li>
-              <li>
-                <div className={styled.s_btn} /* onClick={} */>
-                  <img src="/images/characters_img_3.gif" alt="characters 이미지 3"/>
-                </div>
-              </li>
-              <li>
-                <div className={styled.s_btn} /* onClick={} */>
-                  <img src="/images/characters_img_4.gif" alt="characters 이미지 4"/>
-                </div>
-              </li>
-              <li>
-                <div className={styled.s_btn} /* onClick={} */>
-                  <img src="/images/characters_img_5.gif" alt="characters 이미지 5"/>
-                </div>
-              </li>
-              <li>
-                <div className={styled.s_btn} /* onClick={} */>
-                  <img src="/images/characters_img_6.gif" alt="characters 이미지 6"/>
-                </div>
-              </li>
-              <li>
-                <div className={styled.s_btn} /* onClick={} */>
-                  <img src="/images/characters_img_7.gif" alt="characters 이미지 7"/>
-                </div>
-              </li>
-              <li>
-                <div className={styled.s_btn} /* onClick={} */>
-                  <img src="/images/characters_img_8.jpeg" alt="characters 이미지 8"/>
-                </div>
-              </li>
-              <li>
-                <div className={styled.s_btn} /* onClick={} */>
-                  <img src="/images/characters_img_9.gif" alt="characters 이미지 9"/>
-                </div>
-              </li>
+            ))}
             </ul>
           </div>
         </div>
@@ -69,6 +54,7 @@ function Page() {
 
       <Footer/>
     </div>
+    </>
   )
 }
 
