@@ -87,7 +87,52 @@ export default class MongoDB {
         $set: param
       }, options)
 
-      console.log(r)
+      return true
+    } catch (e) {
+      console.log(e)
+      return false
+    }
+  }
+
+  /**
+   * data delete 
+   * @param collectionName 
+   * @param filter 
+   * @returns 
+   */
+  async deleteOne(collectionName:string, filter:any) {
+    try {
+
+      if (filter.hasOwnProperty('_id')) {
+        filter._id = new ObjectId(filter._id)
+      }
+
+      const cursor = this.db.collection(collectionName)
+      const r = await cursor.deleteOne(filter)
+
+      return true
+    } catch (e) {
+      console.log(e)
+      return false
+    }
+  }
+
+  /**
+   * data delete
+   * @param collectionName 
+   * @param filter 
+   * @returns 
+   */
+  async deleteMany(collectionName:string, filter:any) {
+    try {
+
+      if (filter.hasOwnProperty('_id')) {
+        filter._id = new ObjectId(filter._id)
+      }
+
+      const cursor = this.db.collection(collectionName)
+      const r = await cursor.deleteMany(filter)
+
       return true
     } catch (e) {
       console.log(e)
