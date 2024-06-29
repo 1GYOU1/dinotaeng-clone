@@ -4,7 +4,7 @@ export const fetchStoriesDetail = async (params :any) => {
   try {
     // console.log(params)
     const api = new Api()
-    const {data} = await api.get('/ax/stories/list', {
+    const {data} = await api.get('/ax/stories/detail', {
       params: {
         id: params.id
       }

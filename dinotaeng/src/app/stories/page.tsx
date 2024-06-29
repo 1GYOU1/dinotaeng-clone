@@ -9,14 +9,14 @@ import Api from "@/lib/ApiClass";
 import { useEffect, useState } from "react"
 
 interface Props {
-  data: any[]
+  data: Story[]
 }
 
 // stories page
 function Page() {
 
   // api 한번에 호출
-  const [storiesList, setStoriesList] = useState<any[]>()
+  const [storiesList, setStoriesList] = useState<Story[]>()
   
   useEffect(() => {
     const init = async () => {
@@ -47,7 +47,7 @@ function Page() {
           {storiesList && storiesList.map((item:any) => (
             <li key={item._id}>
               {item.content ? (
-                <Link href={`/stories/${item._id}?content=${item.content}`}>
+                <Link href={`/stories/${item._id}`}>
                   <img src={item.image} alt={item.title}/>
                   <p>{item.title}</p>
                 </Link>

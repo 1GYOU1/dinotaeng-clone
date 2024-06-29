@@ -3,7 +3,6 @@
 import Header from "../../header"
 import Footer from "../../footer"
 import styled from "../../subpage.module.scss"
-import { useParams, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import { fetchStoriesDetail } from "@/fetch/fetchStoriesDetail"
 
@@ -11,17 +10,14 @@ interface Props {
   params: {
     id: string
   }
-  data: Gallery[]
+  data: Story
 }
 
 // stories detail page
-function Page() {
-  const params = useParams();
-  const searchParams = useSearchParams();
-  const content = searchParams.get("content");
+function Page({params}: Props) {
 
   // api 한번에 호출
-  const [storiesDetail, setStoriesDetail] = useState<any[]>()
+  const [storiesDetail, setStoriesDetail] = useState<Story>()
   
   useEffect(() => {
     const init = async () => {
@@ -38,13 +34,11 @@ function Page() {
     <div className={styled.sub_wrap}>
 
         <Header/>
-        
+
         <div className={styled.stories_detail}>
-        {/* {storiesDetail && (
-          <div>{storiesDetail.content}</div>
-        )} */}
-    
-        
+          {storiesDetail && (
+            <div dangerouslySetInnerHTML={{ __html: storiesDetail.content }}></div>
+          )}
         </div>
 
         <Footer/>
