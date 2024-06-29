@@ -4,9 +4,11 @@ export const fetchShopList = async (params :any) => {
     try {
       console.log(params)
       const api = new Api()
-      const {data} = await api.get('/ax/product/detail', {
+      const {data} = await api.get('/ax/product/list', {
         params: {
-          id: params.id
+          categoryKey: params.categoryKey,
+          perPage: params.perPage,
+          page: params.page,
         }
       })
   
