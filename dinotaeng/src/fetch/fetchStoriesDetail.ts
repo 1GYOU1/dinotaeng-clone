@@ -1,10 +1,10 @@
 import Api from "@/lib/ApiClass"
 
-export const fetchGallery = async (params :any) => {
+export const fetchStoriesDetail = async (params :any) => {
   try {
     // console.log(params)
     const api = new Api()
-    const {data} = await api.get('/ax/gallery/detail', {
+    const {data} = await api.get('/ax/stories/detail', {
       params: {
         id: params.id
       }

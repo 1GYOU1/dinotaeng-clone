@@ -7,13 +7,13 @@ import { useEffect, useState } from "react"
 import { fetchCharactersList } from "@/fetch/fetchCharacters"
 
 interface Props {
-  data: characters[]
+  data: Characters[]
 }
 
 //characters
 function Page() {
 
-  const [charactersData, setCharactersData] = useState<characters[]>()
+  const [charactersData, setCharactersData] = useState<Characters[]>()
 
   useEffect(() => {
 
@@ -39,7 +39,7 @@ function Page() {
           <h4>Meet our villagers</h4>
           <div className={styled.img_box}>
             <ul>
-            {charactersData && charactersData.map((item: characters) => (
+            {charactersData && charactersData.map((item: Characters) => (
               <li key={item._id}>
                 <div className={styled.s_btn}>
                   <img src={item.thumbnail} alt={item.name}/>

@@ -12,18 +12,35 @@ import 'aos/dist/aos.css'
 import AOS from 'aos';
 
 import { StoriesSwiperList } from "@/components/stories/Stories";
+import { fetchMainProduct } from "@/fetch/fetchMainProduct";
 
 // 메인 페이지
 function Page() {
   const [galleryList, setGalleryList] = useState<any[]>()
+  const [mainProduct, setMainProduct] = useState<any[]>()
 
+    // 갤러리 리스트 api
     useEffect(() => {
       // useEffect를 이용하여 데이터를 1회 호출한다
       const init = async () => {
           const { data } = await fetchGalleryList()
           setGalleryList(data)
       }
-      init()
+      init();
+    }, []);
+
+    // 매인 상품 추천 리스트 api
+    useEffect(() => {
+      const init = async () => {
+          const { data } = await fetchMainProduct({
+            categoryKey: 'main',
+            perPage: 999,
+            page: 1,
+          })
+          setMainProduct(data)
+          // console.log(data)
+      }
+      init();
     }, []);
 
   useEffect(() => {
@@ -78,56 +95,22 @@ function Page() {
 
         <div className="main_6 mt-40">
           <ul className="flex flex-wrap w-[95%] mx-auto">
-            <li className="w-1/4">
-              <Link href={'/'} className="block mx-10 mb-10">
-                <span className="relative">
-                  <img src="/images/main_product_1_hover.png" alt="메인 제품 이미지 1-1" />
-                  <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src="/images/main_product_1.png" alt="메인 제품 이미지 1" />
-                </span>
-                <p className="name pt-4 text-center text-[16px]">Oreo BOBO PLUSH TAG</p>
-                <p className="price text-center text-[14px]">₩16,000</p>
-              </Link>
-            </li>
-            <li className="w-1/4">
-              <Link href={'/'} className="block mx-10 mb-10">
-                <span className="relative">
-                  <img src="/images/main_product_1_hover.png" alt="메인 제품 이미지 1-1" />
-                 <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src="/images/main_product_1.png" alt="메인 제품 이미지 1" />
-                </span>
-                <p className="name pt-4 text-center text-[16px]">Oreo BOBO PLUSH TAG</p>
-                <p className="price text-center text-[14px]">₩16,000</p>
-              </Link>
-            </li>
-            <li className="w-1/4">
-              <Link href={'/'} className="block mx-10 mb-10">
-                <span className="relative">
-                  <img src="/images/main_product_1_hover.png" alt="메인 제품 이미지 1-1" />
-                 <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src="/images/main_product_1.png" alt="메인 제품 이미지 1" />
-                </span>
-                <p className="name pt-4 text-center text-[16px]">Oreo BOBO PLUSH TAG</p>
-                <p className="price text-center text-[14px]">₩16,000</p>
-              </Link>
-            </li>
-            <li className="w-1/4">
-              <Link href={'/'} className="block mx-10 mb-10">
-                <span className="relative">
-                  <img src="/images/main_product_1_hover.png" alt="메인 제품 이미지 1-1" />
-                 <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src="/images/main_product_1.png" alt="메인 제품 이미지 1" />
-                </span>
-                <p className="name pt-4 text-center text-[16px]">Oreo BOBO PLUSH TAG</p>
-                <p className="price text-center text-[14px]">₩16,000</p>
-              </Link>
-            </li>
-            <li className="w-1/4">
-              <Link href={'/'} className="block mx-10 mb-10">
-                <span className="relative">
-                  <img src="/images/main_product_1_hover.png" alt="메인 제품 이미지 1-1" />
-                 <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src="/images/main_product_1.png" alt="메인 제품 이미지 1" />
-                </span>
-                <p className="name pt-4 text-center text-[16px]">Oreo BOBO PLUSH TAG</p>
-                <p className="price text-center text-[14px]">₩16,000</p>
-              </Link>
-            </li>
+            {mainProduct && (
+              <>
+                {mainProduct.map((item:any) => (
+                  <li className="w-1/4" key={item.productId}>
+                    <Link href={`/product/detail?productId=${item.productId}`} className="block mx-10 mb-10">
+                      <span className="relative">
+                        <img src={item.productThumbnail} alt={item.productName} />
+                        <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src={item.productThumbnail} alt={item.productName} />{/* hover 이미지 */}
+                      </span>
+                      <p className="name pt-4 text-center text-[16px]">{item.productName}</p>
+                      <p className="price text-center text-[14px]">₩{item.productSalePrice}</p>
+                    </Link>
+                  </li>
+                ))}
+              </>
+            )}
           </ul>
         </div>
 

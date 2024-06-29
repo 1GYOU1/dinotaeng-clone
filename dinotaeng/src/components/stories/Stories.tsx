@@ -53,7 +53,7 @@ export function StoriesSwiperList () {
 									<SwiperSlide key={`stories${item._id}`}>
 										{item.content ? (
 										<li>
-											<Link href={`/stories/${item._id}?content=${item.content}`}>
+											<Link href={`/stories/${item._id}`}>
 												<img src={item.image} alt={item.title}/>
 											</Link>
 											<p className="text-left pt-[20px] text-[20px]">{item.title}</p>
