@@ -12,9 +12,29 @@ interface Gallery {
     simple: string,
     images: string[],
 }
-interface characters {
+interface Characters {
     _id: string
     thumbnail: string,
     name: string,
     description: string,
+}
+interface ProductDetail {
+    _id: string,
+    productId: number,
+    categoryKey: string[],
+    productName : string,
+    productThumbnail: string,
+    productPrice: number,
+    productSalePrice: number,
+    reviewCnt: number,
+    hitCnt: number,
+    likeCnt: number,
+    soldCnt: number,
+    qnaCnt: number,
+    isNew: boolean,
+    isBest: boolean,
+    productImages: string[],
+    productIntro: string,
+    description: string,
+    detailImages: string[]
 }
