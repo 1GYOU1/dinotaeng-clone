@@ -5,7 +5,6 @@ export async function GET (request: Request) {
         const { searchParams } = new URL(request.url)
         if (!searchParams.get('page')
             || !searchParams.get('perPage')
-            || !searchParams.get('categoryKey')
         ) {
             throw Error('Invalid Values')
         }
@@ -18,7 +17,7 @@ export async function GET (request: Request) {
             filter = {
                 'productId': { $in: [275,273,269,268,139,214,198,138,151,12,205,174,203,332,327,326,310,320] }
             }
-        } else {
+        } else if (searchParams.get('categoryKey')) {
             filter = {
                 'categoryKey': { $elemMatch: { $eq: searchParams.get('categoryKey')} }
             }
