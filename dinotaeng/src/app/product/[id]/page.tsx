@@ -11,7 +11,6 @@ import { fetchProductDetail } from "@/fetch/fetchProductDetail";
 interface Props {
   params: {
     id: any,
-    productId: any,
   }
   data: ProductDetail[]
 }
@@ -31,8 +30,7 @@ function Page({params}: Props) {
     useEffect(() => {
       const init = async () => {
         const { data } = await fetchProductDetail({
-          id: params.id,
-          productId: params.productId,
+          productId: params.id,
         })
         setProductDetail(data)
         console.log(data)
@@ -43,42 +41,39 @@ function Page({params}: Props) {
   return (
     <div className={styled.product_detail_area}>
       <Header />
+      {productDetail && (
+              <div className={styled.cont_top}>
 
-      <div className={styled.cont_top}>
-
-        <div className={styled.left_area}></div>
-        <div className={styled.left_area}>
-          
-        </div>
-
-        <div className={styled.right_area}>
-          <div>
-            <div className={styled.title}>Quokkacap Cable Protector</div>
-            <div className={styled.price}>
-              <strong>₩7,000</strong>
+              <div className={styled.left_area}></div>
+              <div className={styled.left_area}>
+                
+              </div>
+      
+              <div className={styled.right_area}>
+                <div>
+                  <div className={styled.title}>{productDetail.productName}</div>
+                  <div className={styled.price}>
+                    <strong>₩{productDetail.productSalePrice}</strong>
+                  </div>
+                  <div className={styled.delivery_price}>
+                    <span>₩2,500 (₩50,000 이상 구매 시 무료)</span>
+                  </div>
+                  <div className={styled.total_products}>
+                    <ul>
+                      <li className={styled.t_tit}>{productDetail.productName}</li>
+                      <li className={styled.cal_box}>
+                        <input type="text"/>
+                        <span className={styled.plus}>+</span>
+                        <span className={styled.minus}>-</span>
+                      </li>
+                      <li><strong className={styled.t_price}>₩{productDetail.productSalePrice}</strong></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+      
             </div>
-            <div className={styled.delivery_price}>
-              <span>₩2,500 (₩50,000 이상 구매 시 무료)</span>
-            </div>
-            <div className={styled.total_products}>
-              <ul>
-                <li className={styled.t_tit}>Quokkacap Cable Protector</li>
-                <li className={styled.cal_box}>
-                  <input type="text"/>
-                  <span className={styled.plus}>+</span>
-                  <span className={styled.minus}>-</span>
-                </li>
-                <li><strong className={styled.t_price}>₩21,000</strong></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div>
-
-        </div>
-
-      </div>
+      )}
       
       <div className={styled.bottom_area}></div>
 

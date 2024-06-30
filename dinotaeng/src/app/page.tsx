@@ -99,7 +99,7 @@ function Page() {
               <>
                 {mainProduct.map((item:any) => (
                   <li className="w-1/4" key={item.productId}>
-                    <Link href={`/product/detail?productId=${item.productId}`} className="block mx-10 mb-10">
+                    <Link href={`/product/${item.productId}`} className="block mx-10 mb-10">
                       <span className="relative">
                         <img src={item.productThumbnail} alt={item.productName} />
                         <img className="absolute top-0 left-0 transition ease-in-out hover:opacity-20 duration-300" src={item.productThumbnail} alt={item.productName} />{/* hover 이미지 */}
