@@ -18,10 +18,20 @@ interface Shop {
 
 function Page() {
   const [shopData, setShopData] = useState<Shop[] | null>(null);
+  const [shopMenuNum, setShopMenuNum] = useState<number | null>(null);
+
+  const cateNum = (e:number) => {
+    console.log(e);
+    setShopMenuNum(e);
+  }
 
   useEffect(() => {
     const init = async () => {
-      const data = await fetchShopList({});
+      const data = await fetchShopList({
+        categoryKey: 26,
+          perPage: 10,
+          page: 1,
+      });
       if (data.result && data.data) {
         setShopData(data.data);
       } else {
@@ -30,6 +40,22 @@ function Page() {
     };
     init();
   }, []);
+
+  useEffect(() => {
+    const init = async () => {
+      const data = await fetchShopList({
+        categoryKey: shopMenuNum,
+          perPage: 10,
+          page: 1,
+      });
+      if (data.result && data.data) {
+        setShopData(data.data);
+      } else {
+        console.error(data.message);
+      }
+    };
+    init();
+  }, [shopMenuNum]);
 
   return (
     <div className="w-full">
@@ -40,8 +66,8 @@ function Page() {
           <ul className={styled.category}>
             <li><Link href="">NEW</Link></li>
             <li><Link href="">BEST</Link></li>
-            <li><Link href="">STATIONERY</Link></li>
-            <li><Link href="">MOBILE</Link></li>
+            <li><div onClick={() => cateNum(26)}>STATIONERY</div></li>
+            <li><div onClick={() => cateNum(27)}>MOBILE</div></li>
             <li><Link href="">LIVING</Link></li>
             <li><Link href="">OTHERS</Link></li>
             <li><Link href="">SALE</Link></li>
