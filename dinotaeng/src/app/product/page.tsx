@@ -29,7 +29,7 @@ function Page() {
     const init = async () => {
       const data = await fetchShopList({
         categoryKey: 26,
-          perPage: 10,
+          perPage: 11,
           page: 1,
       });
       if (data.result && data.data) {
@@ -45,7 +45,7 @@ function Page() {
     const init = async () => {
       const data = await fetchShopList({
         categoryKey: shopMenuNum,
-          perPage: 10,
+          perPage: 11,
           page: 1,
       });
       if (data.result && data.data) {
@@ -67,9 +67,9 @@ function Page() {
             <li><Link href="">NEW</Link></li>
             <li><Link href="">BEST</Link></li>
             <li><div onClick={() => cateNum(26)}>STATIONERY</div></li>
-            <li><div onClick={() => cateNum(27)}>MOBILE</div></li>
-            <li><Link href="">LIVING</Link></li>
-            <li><Link href="">OTHERS</Link></li>
+            <li><div onClick={() => cateNum(25)}>MOBILE</div></li>
+            <li><div onClick={() => cateNum(27)}>LIVING</div></li>
+            <li><div onClick={() => cateNum(49)}>OTHERS</div></li>
             <li><Link href="">SALE</Link></li>
           </ul>
 

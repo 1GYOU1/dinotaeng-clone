@@ -220,6 +220,10 @@ $point-family-2:'NanumSquare';
 
       li{
         color:$point-color;
+
+        div:hover{
+          cursor:pointer;
+        }
       }
     }
 
@@ -228,7 +232,8 @@ $point-family-2:'NanumSquare';
         display:flex;
         flex-direction:row;
         flex-wrap:wrap;
-        justify-content:space-around;
+        justify-content:flex-start;
+        gap:48px;
 
         li{
           width:30%;
