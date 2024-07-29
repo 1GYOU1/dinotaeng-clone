@@ -63,7 +63,13 @@ body {
 .swiper-slide img {
   @apply block w-full h-full object-cover;
 }
-
+/* fade effect */
+.swiper-fade .swiper-slide {
+  opacity:0 !important;
+} 
+.swiper-fade .swiper-slide-active {
+  opacity:1 !important;
+}
 /* swiper-arrow */
 .swiper-arrow-prev, .swiper-arrow-next {
   @apply absolute top-1/2 transform -translate-y-1/2 w-[50px] h-[56px];
@@ -74,6 +80,11 @@ body {
 .swiper-arrow-next {
   @apply right-[-60px];
 }
+.swiper-arrow-prev.swiper-button-disabled, 
+.swiper-arrow-next.swiper-button-disabled {
+  opacity:0.35;
+}
+
 .swiper-arrow-prev:hover, .swiper-arrow-next:hover {
   @apply cursor-pointer;
 }

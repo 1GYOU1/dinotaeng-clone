@@ -26,12 +26,12 @@ function Header() {
 		if (rightMenuShow) {
 			// 메뉴 닫기
 			setRightMenuShow(false);
-      setTimeout(() => setBackgroundBlock(false), 300); // display:none
+			setTimeout(() => setBackgroundBlock(false), 300); // display:none
 			document.body.style.overflow = 'auto'; // 스크롤 가능
     } else {
-      // 메뉴 열기
-      setBackgroundBlock(true);// display:block
-      setTimeout(() => setRightMenuShow(true), 300); // opacity: 0.5
+			// 메뉴 열기
+			setBackgroundBlock(true);// display:block
+			setTimeout(() => setRightMenuShow(true), 300); // opacity: 0.5
 			document.body.style.overflow = 'hidden'; // 스크롤 방지
     }
   };

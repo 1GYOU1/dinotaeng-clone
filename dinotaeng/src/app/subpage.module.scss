@@ -67,6 +67,7 @@ $point-family-2:'NanumSquare';
 
 // characters page
 .characters_area{
+  position:relative;
   .cont01{
     img{
       width:100%;
@@ -99,6 +100,80 @@ $point-family-2:'NanumSquare';
         }
       }
     }
+  }
+  .characters_pop_layer{
+    &.on{
+      display:block;
+    }
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:calc(100% - 200px);
+    height:calc(100% - 200px);
+    padding:100px;
+    background:#fff;
+    z-index:100;
+    > .event_slide{
+      li{
+        display:flex;
+        flex-direction:column;
+        gap:50px;
+        .thumb{
+          width:300px;
+          margin:0 auto;
+        }
+        .name{
+          display:block;
+          font-size:65px;
+          line-height:75px;
+          font-weight:100;
+          font-family:$point-family-1;
+          color:$point-color;
+        }
+        .desc{
+          font-size:16px;
+          line-height:26px;
+          word-break:keep-all;
+        }
+      }
+    }
+    .slideArrowPrev{
+      left:80px;
+      z-index:1;
+      &::before{
+        background-color:$point-color;
+      }
+      &::after{
+        background-color:$point-color;
+      }
+    }
+    .slideArrowNext{
+      right:80px;
+      z-index:1;
+      &::before{
+        background-color:$point-color;
+      }
+      &::after{
+        background-color:$point-color;
+      }
+    }
+  }
+  .characters_pop_bg{
+    &.on{
+      display:block;
+    }
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:#ddd;
+    z-index:99;
+    cursor: url('../../public/images/characters/collection.cur') 24 24, auto;
+    transition: .5s all ease;
   }
 }
 
@@ -305,7 +380,7 @@ $point-family-2:'NanumSquare';
     box-sizing:border-box;
     background:#fff;
     .title{
-      font-size: 20px;
+      font-size:20px;
       color:$point-color;
       font-family:$point-family-1;
       padding:5px 0 20px 0;
@@ -313,18 +388,18 @@ $point-family-2:'NanumSquare';
     .price{
       font-size:14px;
       color:#111;
-      margin: 5px 0;
+      margin:5px 0;
     }
     .delivery_price{
-      font-size: 12px;
+      font-size:12px;
       color:#888;
       margin:5px 0;
     }
     .total_products{
       ul{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
         width:80%;
         margin:0 auto;
         .t_tit{
@@ -335,21 +410,21 @@ $point-family-2:'NanumSquare';
             input{
               width:22px;
               height:22px;
-              font-size: 11px;
+              font-size:11px;
               text-align:center;
-              border: 1px solid #ccc;
+              border:1px solid #ccc;
               margin-right:7px;
             }
             .plus{
-              width: 22px;
-              height: 22px;
-              cursor: pointer;
+              width:22px;
+              height:22px;
+              cursor:pointer;
               margin-right:5px;
             }
             .minus{
-              width: 22px;
-              height: 22px;
-              cursor: pointer;
+              width:22px;
+              height:22px;
+              cursor:pointer;
             }
         }
         .t_price{

@@ -11,6 +11,7 @@ import { fetchProductDetail } from "@/fetch/fetchProductDetail";
 interface Props {
   params: {
     id: any,
+    //[폴더명]: any
   }
   data: ProductDetail[]
 }
@@ -29,8 +30,11 @@ function Page({params}: Props) {
   
     useEffect(() => {
       const init = async () => {
+        console.log("1.")
+        console.log(params)
         const { data } = await fetchProductDetail({
           productId: params.id,
+          //아무이름 : params.[폴더명]
         })
         setProductDetail(data)
         console.log(data)
