@@ -43,8 +43,8 @@ function Page() {
       document.body.style.overflow = 'auto'; // 스크롤 복원
     } else {
       setCharacterPopShow(true); // 팝업 열기
-      if (swiper && e) {
-        swiper.slideTo(e); // 슬라이드 idx 이동
+      if (swiper && typeof e === 'number') { // e가 0일때 false라서 타입으로 검사
+          swiper.slideTo(e); // 슬라이드 idx 이동
       }
       document.body.style.overflow = 'hidden'; // 스크롤 방지
     }
