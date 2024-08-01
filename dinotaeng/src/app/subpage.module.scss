@@ -136,6 +136,8 @@ $point-family-2:'NanumSquare';
           font-size:16px;
           line-height:26px;
           word-break:keep-all;
+          width:800px;
+          margin:0 auto;
         }
       }
     }
@@ -363,6 +365,9 @@ $point-family-2:'NanumSquare';
   font-family:$point-family-2;
   .left_area{
     width:65%;
+    img{
+      width:100%;
+    }
   }
   .right_area{
     position:fixed;
